@@ -103,6 +103,10 @@ Calculator/
 └── README.md
 ```
 
+## Author
+
+*   **Srijan Gupta**
+
 ## License
 
 This project is open-sourced under the MIT License. See the `LICENSE` file for more details.
