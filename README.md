@@ -2,4 +2,4 @@
 
 A simple calculator application.
 
-Author: srijan
+Author: Srijan Gupta
