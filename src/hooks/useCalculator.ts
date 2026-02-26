@@ -152,12 +152,12 @@ export const useCalculator = () => {
           return {
             ...prevState,
             operator: null,
-            display: prevState.previousValue,
-            currentValue: prevState.previousValue,
+            display: prevState.previousValue, // Revert display to previous number
+            currentValue: prevState.previousValue, // Allow editing previous number
             waitingForNewNumber: false,
           };
         } else {
-          // If no operator or previous value, just reset to '0'
+          // If no operator or previous value (e.g., after equals), just reset to '0'
           return { ...initialState, display: '0', currentValue: '' };
         }
       } else {
@@ -166,10 +166,11 @@ export const useCalculator = () => {
           const newCurrentValue = prevState.currentValue.slice(0, -1);
           return { ...prevState, currentValue: newCurrentValue, display: newCurrentValue };
         } else if (prevState.currentValue.length === 1 || prevState.currentValue === '0.') {
+          // If only one digit or '0.', clear to '0'
           return { ...prevState, currentValue: '0', display: '0' };
         }
       }
-      return prevState;
+      return prevState; // No change if currentValue is '0' and backspace is pressed
     });
   }, []);
 
