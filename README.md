@@ -8,7 +8,7 @@ A sleek and functional calculator application built with React, TypeScript, Tail
 
 *   **Basic Arithmetic Operations**: Addition, Subtraction, Multiplication, Division.
 *   **Clear Functionality**: Reset the calculator with a single button.
-*   **Backspace Functionality**: Remove the last digit of the current input.
+*   **Backspace Functionality**: Remove the last digit of the current input or revert an operation.
 *   **Decimal Support**: Perform calculations with floating-point numbers, preventing multiple decimals in a single number.
 *   **Responsive Design**: Adapts to different screen sizes (though primarily designed for a fixed-size desktop experience).
 *   **Modern UI**: Built with Tailwind CSS and shadcn/ui for a clean and intuitive user experience, with distinct styling for operators.
@@ -74,7 +74,7 @@ This will generate optimized static files in the `dist` directory.
 
 ## Usage
 
-Simply open the application in your browser. Click the number buttons to input digits, then select an operator (+, -, *, /), input the second number, and press '=' to see the result. Use 'C' to clear the current input or reset the calculator. Use the backspace button to remove the last digit entered.
+Simply open the application in your browser. Click the number buttons to input digits, then select an operator (+, -, *, /), input the second number, and press '=' to see the result. Use 'C' to clear the current input or reset the calculator. Use the backspace button to remove the last digit entered or to undo the last operation.
 
 ## Project Structure
 

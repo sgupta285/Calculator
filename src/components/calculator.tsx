@@ -15,8 +15,8 @@ const Calculator: React.FC = () => {
   } = useCalculator();
 
   const buttonClasses = "w-full h-16 text-xl font-semibold";
-  // Operator buttons now explicitly use shadcn's default (primary) variant for distinct styling.
-  // The 'operatorButtonClasses' variable is removed as it was empty and redundant.
+  // Operator buttons now use a distinct color for better visual separation.
+  const operatorButtonClasses = "bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-500 dark:hover:bg-indigo-600";
   const utilityButtonClasses = "bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100";
   const numberButtonClasses = "bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100";
 
@@ -28,22 +28,22 @@ const Calculator: React.FC = () => {
       <div className="grid grid-cols-4 gap-2">
         <Button className={`${buttonClasses} ${utilityButtonClasses}`} onClick={handleClearClick}>C</Button>
         <Button className={`${buttonClasses} ${utilityButtonClasses}`} onClick={handleBackspaceClick}><Backspace className="h-6 w-6" /></Button>
-        <Button className={`${buttonClasses}`} variant="default" onClick={() => handleOperatorClick('/')}>/</Button>
-        <Button className={`${buttonClasses}`} variant="default" onClick={() => handleOperatorClick('*')}>*</Button>
+        <Button className={`${buttonClasses} ${operatorButtonClasses}`} onClick={() => handleOperatorClick('/')}>/</Button>
+        <Button className={`${buttonClasses} ${operatorButtonClasses}`} onClick={() => handleOperatorClick('*')}>*</Button>
 
         <Button className={`${buttonClasses} ${numberButtonClasses}`} onClick={() => handleNumberClick('7')}>7</Button>
         <Button className={`${buttonClasses} ${numberButtonClasses}`} onClick={() => handleNumberClick('8')}>8</Button>
         <Button className={`${buttonClasses} ${numberButtonClasses}`} onClick={() => handleNumberClick('9')}>9</Button>
-        <Button className={`${buttonClasses}`} variant="default" onClick={() => handleOperatorClick('-')}>-</Button>
+        <Button className={`${buttonClasses} ${operatorButtonClasses}`} onClick={() => handleOperatorClick('-')}>-</Button>
 
         <Button className={`${buttonClasses} ${numberButtonClasses}`} onClick={() => handleNumberClick('4')}>4</Button>
         <Button className={`${buttonClasses} ${numberButtonClasses}`} onClick={() => handleNumberClick('5')}>5</Button>
         <Button className={`${buttonClasses} ${numberButtonClasses}`} onClick={() => handleNumberClick('6')}>6</Button>
-        <Button className={`${buttonClasses}`} variant="default" onClick={() => handleOperatorClick('+')}>+</Button>
+        <Button className={`${buttonClasses} ${operatorButtonClasses}`} onClick={() => handleOperatorClick('+')}>+</Button>
 
         <Button className={`${buttonClasses} ${numberButtonClasses} col-span-2`} onClick={() => handleNumberClick('0')}>0</Button>
         <Button className={`${buttonClasses} ${numberButtonClasses}`} onClick={handleDecimalClick}>.</Button>
-        <Button className={`${buttonClasses}`} variant="default" onClick={handleEqualsClick}>=</Button>
+        <Button className={`${buttonClasses} ${operatorButtonClasses}`} onClick={handleEqualsClick}>=</Button>
       </div>
     </div>
   );

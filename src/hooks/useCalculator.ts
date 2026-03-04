@@ -126,11 +126,14 @@ export const useCalculator = () => {
       }
 
       if (prevState.waitingForNewNumber) {
+        // If waiting for a new number, start a new number with '0.'
         return { ...prevState, currentValue: '0.', display: '0.', waitingForNewNumber: false };
       } else if (!prevState.currentValue.includes('.')) {
+        // Only add a decimal if one doesn't already exist in the current number
         const newCurrentValue = prevState.currentValue === '' ? '0.' : prevState.currentValue + '.';
         return { ...prevState, currentValue: newCurrentValue, display: newCurrentValue };
       }
+      // Do nothing if a decimal already exists
       return prevState;
     });
   }, []);
@@ -146,8 +149,8 @@ export const useCalculator = () => {
       }
 
       if (prevState.waitingForNewNumber) {
-        // If an operator was just pressed, or equals was pressed,
-        // backspace should effectively clear the operator and allow editing the previous number.
+        // If an operator was just pressed, or equals was pressed, and there's a previous value,
+        // backspace should effectively cancel the operator and allow editing the previous number.
         if (prevState.operator && prevState.previousValue) {
           return {
             ...prevState,
@@ -156,12 +159,14 @@ export const useCalculator = () => {
             currentValue: prevState.previousValue, // Allow editing previous number
             waitingForNewNumber: false,
           };
-        } else {
-          // If no operator or previous value (e.g., after equals), just reset to '0'
+        } else if (prevState.currentValue) {
+          // If after equals, and currentValue holds the result, backspace clears it.
           return { ...initialState, display: '0', currentValue: '' };
         }
+        // If waiting for new number but no previous value/operator (e.g., after 'C' then operator)
+        return initialState;
       } else {
-        // Actively typing a number
+        // Actively typing a number (currentValue)
         if (prevState.currentValue.length > 1) {
           const newCurrentValue = prevState.currentValue.slice(0, -1);
           return { ...prevState, currentValue: newCurrentValue, display: newCurrentValue };
