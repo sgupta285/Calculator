@@ -14,15 +14,16 @@ const Calculator: React.FC = () => {
     handleBackspaceClick,
   } = useCalculator();
 
-  const buttonClasses = "w-full h-16 text-xl font-semibold";
+  // Adjusted button classes for responsiveness
+  const buttonClasses = "w-full h-14 sm:h-16 text-xl font-semibold";
   // Operator buttons now use a distinct color for better visual separation.
   const operatorButtonClasses = "bg-indigo-600 hover:bg-indigo-700 text-white dark:bg-indigo-500 dark:hover:bg-indigo-600";
   const utilityButtonClasses = "bg-gray-300 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100";
   const numberButtonClasses = "bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-100";
 
   return (
-    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-xl w-80">
-      <div className="bg-gray-100 dark:bg-gray-900 text-right p-4 mb-4 rounded-md text-4xl font-mono overflow-hidden whitespace-nowrap text-gray-900 dark:text-gray-50">
+    <div className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-xl w-full max-w-sm">
+      <div className="bg-gray-100 dark:bg-gray-900 text-right p-3 sm:p-4 mb-3 sm:mb-4 rounded-md text-3xl sm:text-4xl font-mono overflow-hidden whitespace-nowrap text-gray-900 dark:text-gray-50">
         {display}
       </div>
       <div className="grid grid-cols-4 gap-2">

@@ -1,6 +1,6 @@
 # Modern Calculator App
 
-![Calculator Screenshot](https://via.placeholder.com/600x400?text=Calculator+App+Screenshot)
+![Calculator Screenshot](https://via.placeholder.com/600x400?text=Responsive+Calculator+App)
 
 A sleek and functional calculator application built with React, TypeScript, Tailwind CSS, and shadcn/ui. This project demonstrates a modern web development stack for creating interactive user interfaces.
 
@@ -10,7 +10,7 @@ A sleek and functional calculator application built with React, TypeScript, Tail
 *   **Clear Functionality**: Reset the calculator with a single button.
 *   **Backspace Functionality**: Remove the last digit of the current input or revert an operation.
 *   **Decimal Support**: Perform calculations with floating-point numbers, preventing multiple decimals in a single number.
-*   **Responsive Design**: Adapts to different screen sizes (though primarily designed for a fixed-size desktop experience).
+*   **Responsive Design**: Adapts seamlessly to different screen sizes, providing an optimal experience on both mobile and desktop.
 *   **Modern UI**: Built with Tailwind CSS and shadcn/ui for a clean and intuitive user experience, with distinct styling for operators.
 
 ## Tech Stack
